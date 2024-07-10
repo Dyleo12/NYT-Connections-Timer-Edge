@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Timer Extension",
+    "version": "1.0",
+    "description": "An extension with a timer",
+    "action": {
+      "default_icon": {
+        "16": "images/icon.png",
+        "48": "images/icon.png",
+        "128": "images/icon.png"
+      }
+    },
+    "permissions": [
+      "activeTab",
+      "scripting",
+      "storage"
+    ],
+    "web_accessible_resources": [
+    {
+      "resources": [ "images/pause_icon.png" , "images/play.png" ],
+      "matches": [ "https://*/*" ]
+    }
+  ],
+    "content_scripts": [
+      {
+        "matches": ["https://www.nytimes.com/games/connections"],  
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
